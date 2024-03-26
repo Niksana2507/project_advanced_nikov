@@ -1,0 +1,348 @@
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+} 
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+}
+
+.rightnav .menu {
+    padding: 10px;
+}
+
+.rightnav li{
+    display: inline-block;
+    position: relative;
+    margin: 0 2px;
+}
+
+.leftnav {
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+ 
+}
+
+.logo {
+    width: 10%;
+}
+
+/* #desktopNav {
+    position: fixed;
+} */
+
+#desktopNav a {
+    border-bottom: none;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: lightskyblue;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    margin: 15px;
+}
+
+#desktopNav a:hover {
+    cursor: pointer;
+}
+
+.active a {
+    color: #33D2FF !important;
+}
+
+
+.hamburger {
+    display: none;
+}
+/* Dropdown меню */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown.open {
+    height: 240px;
+}
+
+.dropdown li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Resoponsive hamburger */
+@media (max-width: 992px) {
+    .rightnav {
+        display: none;
+    }
+
+    .hamburger  {
+        display: block;
+        cursor: pointer;
+        margin: auto;
+    }
+
+    .hamburger i {
+        font-size: 24px;
+    }
+    
+    .dropdown.open {
+        display: block;
+        height: 380px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown.open {
+        left: 2rem;
+        width: unset;
+        height: unset;
+    }
+}
+
+
+
+/* Начало на футъра */
+
+/* footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    padding: 3px;
+    text-align: center;
+    color: lightgray;
+    font-weight: bold;
+} */
+
+footer {
+    background-color: black;    
+}
+.footerContainer {
+    width: 100%;
+    padding: 45px 0px 1px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    flex: 0 0 auto;
+}
+
+.socialIcons a:hover .fa-youtube {
+    color: red;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-google-plus {
+    color: red;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-twitter {
+    color: #1DA1F2;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-instagram {
+    color: #C13584;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-facebook {
+    color: #1877F2;
+    transition: 0.5s;
+}
+
+.socialIcons i {
+    color: black;
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav a {
+    text-decoration: none;
+    margin: 30px;
+    color: white;
+    font-size: 1.3em;
+    opacity: 0.7;
+    /*transition: 0.5;*/
+}
+
+.footerNav a:hover {
+    opacity: 1;
+    color:#33D2FF;
+}
+
+.footerBottom {
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white
+}
+
+@media (max-width: 992px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav li {
+        text-align: center;
+        margin: 10px;
+    }
+
+    .socialIcons i {
+        font-size: 1.5em;
+    }
+}
+
+/* Край на футъра */
+
+.app {
+    position: static;
+    width: 100%;
+    background-image: url(staticfiles/images/1.png);
+    background-color: rgb(10,10,50);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(75vh - 4em);
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+
+#app h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.15;
+    padding-left: 15px;
+    color: #33D2FF;
+}
+
+.typewrite {
+    color: lightskyblue;
+    font-size: 40px; 
+    padding-left: 15px;
+}
+
+/* Част от проектите - плъзгаща галерия */
+#gallery {
+    display: flex;
+    height: 100vh;
+    background-color: #2F4858;
+}
+
+.splide {
+    margin-bottom: 70px;
+}
+
+.splide__slide {
+    margin-left: -1vw;
+}
+
+/* Наместване на снимките в слайдера */
+.splide__slide img {
+    height: 65vh;
+    width: 95%;
+    margin-top: 30px;
+    margin-left: 6%;
+    padding: 84px 0 20px 0;
+}
+
+@media (max-width: 1100px) {
+    #gallery {
+        justify-content: center;
+    }
+}
+
+
+@media (max-height: 500px) {
+    #gallery {
+        height: 151vh;
+    }
+
+}
+
+/* @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@-moz-keyframes fadein {  Firefox 
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {  Safari and Chrome 
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {  Opera 
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+} */

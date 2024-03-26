@@ -1,0 +1,310 @@
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/contact.jpg);
+    flex-direction: column;
+    /* Добавяме разстояние за добавения допълнително footer */
+    padding-bottom: 50px;
+    padding-top: 84px;
+}
+
+.contact h1 {
+    font-size: 43px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1299eb;
+}
+
+.contact form {
+    width: 80%;
+    text-align: center;
+    max-width: 600px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid #33D2FF;
+    background: transparent;
+    outline: none;
+    border-radius: 6px;
+    margin: 12px 0;
+    color: black;
+}
+
+.field.error .item {
+    border-color: red;
+}
+
+
+.input-field {
+    width: 42%;
+}
+
+.textarea-field .item {
+    resize: none;
+}
+
+form button {
+    background-color: #33D2FF;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 0 10px #33D2FF;
+    border-radius: 6px;
+    transition: .5s;
+    margin-top: 20px;
+    padding: 12px 32px;
+}
+
+form button:hover {
+    box-shadow: none;
+}
+
+.error-txt {
+    color: red;
+    font-size: 14.5px;
+    text-align: left;
+    margin: -5px 0 10px;
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
+/* Начало на нашия header и footer */
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+}
+
+.rightnav .menu {
+    padding: 10px;
+}
+
+.rightnav li {
+    display: inline-block;
+    position: relative;
+    margin: 0 2px;
+}
+
+.leftnav {
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+}
+
+.logo {
+    width: 10%;
+}
+
+#desktopNav a {
+    border-bottom: none;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: lightskyblue;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    margin: 15px;
+}
+
+#desktopNav a:hover {
+    cursor: pointer;
+}
+
+.active a {
+    color: #33D2FF !important;
+}
+
+.hamburger {
+    display: none;
+}
+
+  /* Dropdown меню */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown.open {
+    height: 240px;
+}
+
+.dropdown li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  /* Resoponsive hamburger */
+@media (max-width: 992px) {
+    .rightnav {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      margin: auto;
+    }
+
+    .hamburger i {
+      font-size: 24px;
+    }
+
+    .dropdown.open {
+      display: block;
+      height: 380px;
+      width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown.open {
+      left: 2rem;
+      width: unset;
+      height: unset;
+    }
+}
+
+
+/* Начало на футъра */
+
+footer {
+    background-color: black;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 45px 0px 1px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    flex: 0 0 auto;
+}
+
+.socialIcons a:hover .fa-youtube {
+    color: red;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-google-plus {
+    color: red;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-twitter {
+    color: #1DA1F2;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-instagram {
+    color: #C13584;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover .fa-facebook {
+    color: #1877F2;
+    transition: 0.5s;
+}
+
+.socialIcons i {
+    color: black;
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav a {
+    text-decoration: none;
+    margin: 30px;
+    color: white;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5;
+}
+
+.footerNav a:hover {
+    opacity: 1;
+    color: #33D2FF;
+}
+
+.footerBottom {
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white
+}
+
+@media (max-width: 992px) {
+    .footerNav ul {
+      flex-direction: column;
+    }
+
+    .footerNav li {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .socialIcons i {
+        font-size: 1.5em;
+    }
+}

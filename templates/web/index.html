@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <!-- auto scroll за галерия JS -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/splide.css' %}">
+        <title>Курсова работа</title>
+    </head>
+    <body onload="addText();">
+        <div class="content">
+            <!-- Nachalo header -->
+            <header>
+              <nav id="desktopNav">
+                <div class="leftnav">
+                     <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"/></a>
+                </div>
+                <div class="rightnav">
+                  <ul class="menu">
+                    <li class="active"><a href="index.html">Начало</a></li>
+                    <li><a href="../forus.html">За нас</a></li>
+                    <li><a href="../services.html">Услуги</a></li>
+                    <li><a href="../contact.html">Контакти</a></li>
+                  </ul>
+                </div>
+                <div class="hamburger">
+                  <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </div>
+                <div class="dropdown">
+                  <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                  <li><a href="../forus.html">За нас</a></li>
+                  <li><a href="../services.html">Услуги</a></li>
+                  <li><a href="../contact.html">Контакти</a></li>
+                </div>
+              </nav>
+            </header>
+            <!-- Krai header-->
+
+            <section id="home">
+              <div id="app">
+                <div class="app">
+                  <section class="container">
+                    <h1>Автосервиз "DJANGO"</h1>
+                    <h2>
+                      <p class="typewrite" dataperiod="2000" datatype="[&quot;Здравейте!&quot;,&quot;Добре дошли в автосервиз DJANGO!&quot;]">
+                      </p>
+                    </h2>
+                  </section>
+                </div>
+              </div>
+            </section>
+
+            <section id="gallery">
+              <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project1.jpg' %}" alt="Projects">
+                          </li>
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project2.jpg' %}" alt="Projects">
+                          </li>
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project3.jpg' %}" alt="Projects">
+                          </li>
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project4.jpg' %}" alt="Projects">
+                          </li>
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project5.jpg' %}" alt="Projects">
+                          </li>
+                          <li class="splide__slide">
+                              <img src="{% static 'images/project6.jpg' %}" alt="Projects">
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+            </section>
+
+            <!-- Nachalo footer -->
+            <footer>
+              <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul class="menu">
+                        <li class="active"><a href="index.html">Начало</a></li>
+                        <li><a href="../forus.html">За нас</a></li>
+                        <li><a href="../services.html">Услуги</a></li>
+                        <li><a href="../contact.html">Контакти</a></li>
+                      </ul>
+                </div>
+                <div class="footerBottom">
+                    <p>©Nikolay Nikov. Всички права са запазени. </p>
+                </div>
+              </div>
+            </footer>
+            <!-- Krai footer -->
+        </div>
+        <script src="{% static 'javascript/app.js' %}"></script>
+    </body>
+</html>

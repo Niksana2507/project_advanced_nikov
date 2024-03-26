@@ -1,0 +1,52 @@
+{% load static %}
+            <!-- Nachalo header -->
+            <header>
+              <nav id="desktopNav">
+                <div class="leftnav">
+                     <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"/></a>
+                </div>
+                <div class="rightnav">
+                  <ul class="menu">
+                    <li class="active"><a href="index.html">Начало</a></li>
+                    <li><a href="../forus.html">За нас</a></li>
+                    <li><a href="../services.html">Услуги</a></li>
+                    <li><a href="../contact.html">Контакти</a></li>
+                  </ul>
+                </div>
+                <div class="hamburger">
+                  <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </div>
+                <div class="dropdown">
+                  <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                  <li><a href="../forus.html">За нас</a></li>
+                  <li><a href="../services.html">Услуги</a></li>
+                  <li><a href="../contact.html">Контакти</a></li>
+                </div>
+              </nav>
+            </header>
+            <!-- Krai header-->
+            <!-- Nachalo footer -->
+            <footer>
+              <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul class="menu">
+                        <li class="active"><a href="index.html">Начало</a></li>
+                        <li><a href="../forus.html">За нас</a></li>
+                        <li><a href="../services.html">Услуги</a></li>
+                        <li><a href="../contact.html">Контакти</a></li>
+                      </ul>
+                </div>
+                <div class="footerBottom">
+                    <p>©Nikolay Nikov. Всички права са запазени. </p>
+                </div>
+              </div>
+            </footer>
+            <!-- Krai footer -->
+        <script src="{% static 'javascript/app.js' %}"></script>
