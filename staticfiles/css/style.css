@@ -245,7 +245,7 @@ footer {
 .app {
     position: static;
     width: 100%;
-    background-image: url(staticfiles/images/1.png);
+    background-image: url(../images/mechanic.png);
     background-color: rgb(10,10,50);
     background-size: cover;
     background-position: center center;

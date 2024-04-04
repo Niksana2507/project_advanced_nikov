@@ -1,0 +1,153 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#    <head>#}
+{#        <meta charset="UTF-8">#}
+{#        <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"#}
+{#            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="#}
+{#            crossorigin="anonymous" referrerpolicy="no-referrer">#}
+{#        <link rel="stylesheet" href="contact.css">#}
+{#        <title>Контактна форма</title>#}
+{#    </head>#}
+{#    <body>#}
+{#        <header>#}
+{#            <nav id="desktopNav">#}
+{#              <div class="leftnav">#}
+{#                <a href="web/index.html"><img src="images/logo.png" alt="logo" class="logo" /></a>#}
+{#              </div>#}
+{#              <div class="rightnav">#}
+{#                <ul class="menu">#}
+{#                  <li class="active"><a href="web/index.html">Начало</a></li>#}
+{#                  <li><a href="forus.html">За нас</a></li>#}
+{#                  <li><a href="services.html">Услуги</a></li>#}
+{#                  <li><a href="contact.html">Контакти</a></li>#}
+{#                </ul>#}
+{#              </div>#}
+{#              <div class="hamburger">#}
+{#                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>#}
+{#              </div>#}
+{#              <div class="dropdown">#}
+{#                <li class="active"><a href="web/index.html">Начало</a></li>#}
+{#                <li><a href="forus.html">За нас</a></li>#}
+{#                <li><a href="services.html">Услуги</a></li>#}
+{#                <li><a href="contact.html">Контакти</a></li>#}
+{#              </div>#}
+{#            </nav>#}
+{#        </header>#}
+{##}
+{#        <section class="contact">#}
+{#            <h1>Свържете се с нас!</h1>#}
+{##}
+{#            <form action="#">#}
+{#                <div class="input-box">#}
+{#                    <div class="input-field field">#}
+{#                        <input type="text" placeholder="Име и Фамилия" id="name"#}
+{#                        class="item" autocomplete="off">#}
+{#                        <div class="error-txt">Празно поле</div>#}
+{#                    </div>#}
+{#                    <div class="input-field field">#}
+{#                        <input type="text" placeholder="Имейл адрес" id="email"#}
+{#                        class="item" autocomplete="off">#}
+{#                        <div class="error-txt email">Празно поле</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="input-box">#}
+{#                    <div class="input-field field">#}
+{#                        <input type="text" placeholder="Телефонен номер" id="phone"#}
+{#                        class="item" autocomplete="off">#}
+{#                        <div class="error-txt">Празно поле</div>#}
+{#                    </div>#}
+{#                    <div class="input-field field">#}
+{#                        <input type="text" placeholder="Марка и модел на колата" id="subject"#}
+{#                        class="item" autocomplete="off">#}
+{#                        <div class="error-txt">Празно поле</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="textarea-field field">#}
+{#                    <textarea name="" id="message" cols="30"#}
+{#                        rows="10" placeholder="Опишете състоянието на колата" class="item" autocomplete="off">#}
+{#                    </textarea>#}
+{#                    <div class="error-txt">Празно поле</div>#}
+{#                </div>#}
+{##}
+{#                <button type="submit">Изпрати</button>#}
+{#            </form>#}
+{#        </section>#}
+{##}
+{#        <footer>#}
+{#            <div class="footerContainer">#}
+{#              <div class="socialIcons">#}
+{#                <a href=""><i class="fa-brands fa-facebook"></i></a>#}
+{#                <a href=""><i class="fa-brands fa-instagram"></i></a>#}
+{#                <a href=""><i class="fa-brands fa-twitter"></i></a>#}
+{#                <a href=""><i class="fa-brands fa-google-plus"></i></a>#}
+{#                <a href=""><i class="fa-brands fa-youtube"></i></a>#}
+{#              </div>#}
+{#              <div class="footerNav">#}
+{#                <ul class="menu">#}
+{#                  <li class="active"><a href="web/index.html">Начало</a></li>#}
+{#                  <li><a href="forus.html">За нас</a></li>#}
+{#                  <li><a href="services.html">Услуги</a></li>#}
+{#                  <li><a href="contact.html">Контакти</a></li>#}
+{#                </ul>#}
+{#              </div>#}
+{#              <div class="footerBottom">#}
+{#                <p>©Nikolay Nikov & ©Petur Valev. Всички права са запазени.</p>#}
+{#              </div>#}
+{#            </div>#}
+{#        </footer>#}
+{##}
+{#        <!--Безплатен JS library за изпращане на имейл-->#}
+{#        <script src="https://smtpjs.com/v3/smtp.js"></script>#}
+{#        <!--Безплатен JS library за alert при натискане на бутона 'Изпрати'-->#}
+{#        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>#}
+{#        <script src="contact.js"></script>#}
+{#        <script src="app.js"></script>#}
+{#    </body>#}
+{#</html>#}
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="contact">
+            <h1>Свържете се с нас!</h1>
+            <form action="#">
+                <div class="input-box">
+                    <div class="input-field field">
+                        <input type="text" placeholder="Име и Фамилия" id="name"
+                        class="item" autocomplete="off">
+                        <div class="error-txt">Празно поле</div>
+                    </div>
+                    <div class="input-field field">
+                        <input type="text" placeholder="Имейл адрес" id="email"
+                        class="item" autocomplete="off">
+                        <div class="error-txt email">Празно поле</div>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="input-field field">
+                        <input type="text" placeholder="Телефонен номер" id="phone"
+                        class="item" autocomplete="off">
+                        <div class="error-txt">Празно поле</div>
+                    </div>
+                    <div class="input-field field">
+                        <input type="text" placeholder="Марка и модел на колата" id="subject"
+                        class="item" autocomplete="off">
+                        <div class="error-txt">Празно поле</div>
+                    </div>
+                </div>
+
+                <div class="textarea-field field">
+                    <textarea name="" id="message" cols="30"
+                        rows="10" placeholder="Опишете състоянието на колата" class="item" autocomplete="off">
+                    </textarea>
+                    <div class="error-txt">Празно поле</div>
+                </div>
+
+                <button type="submit">Изпрати</button>
+            </form>
+        </section>
+{% endblock %}
