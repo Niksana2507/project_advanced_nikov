@@ -1,83 +1,96 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-        <!-- auto scroll за галерия JS -->
-        <script
-          src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
-        </script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'css/splide.css' %}">
-        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-        <link rel="stylesheet" href="{% static 'css/forus.css' %}">
-        <link rel="stylesheet" href="{% static 'css/services.css' %}">
-        <title>{% block title %} Изпит Django {% endblock %}</title>
-    </head>
-     <body onload="addText();">
-        <div class="content">
-            <!-- Nachalo header -->
-            <header>
-              <nav id="desktopNav">
-                <div class="leftnav">
-                     <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"/></a>
-                </div>
-                <div class="rightnav">
-                  <ul class="menu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <!-- auto scroll за галерия JS -->
+    <script
+            src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forus.css' %}">
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <title>{% block title %} Изпит Django {% endblock %}</title>
+</head>
+<body onload="addText();">
+<div class="content">
+    <!-- Nachalo header -->
+    <header>
+        <nav id="desktopNav">
+            <div class="leftnav">
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"/></a>
+            </div>
+            <div class="rightnav">
+                <ul class="menu">
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
                     <li><a href="{% url 'forus' %}">За нас</a></li>
                     <li><a href="{% url 'services' %}">Услуги</a></li>
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
-                  </ul>
-                </div>
-                <div class="hamburger">
-                  <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-                </div>
-                <div class="dropdown">
-                  <li class="active"><a href="{% url 'index' %}">Начало</a></li>
-                  <li><a href="{% url 'forus' %}">За нас</a></li>
-                  <li><a href="{% url 'services' %}">Услуги</a></li>
-                  <li><a href="{% url 'contact' %}">Контакти</a></li>
-                </div>
-              </nav>
-            </header>
-            <!-- Krai header-->
-            {% block content %}
-            {% endblock %}
-            <!-- Nachalo footer -->
-            <footer>
-              <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-                </div>
-                <div class="footerNav">
-                    <ul class="menu">
-                        <li class="active"><a href="{% url 'index' %}">Начало</a></li>
-                        <li><a href="{% url 'forus' %}">За нас</a></li>
-                        <li><a href="{% url 'services' %}">Услуги</a></li>
-                        <li><a href="{% url 'contact' %}">Контакти</a></li>
-                      </ul>
-                </div>
-                <div class="footerBottom">
-                    <p>©Nikolay Nikov. Всички права са запазени.</p>
-                </div>
-              </div>
-            </footer>
-            <!-- Krai footer -->
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                    <li><a href="{% url 'login' %}">Влез</a></li>
+                    <li><form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button>Излез</button>
+                    </form></li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </div>
+            <div class="dropdown">
+                <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                <li><a href="{% url 'forus' %}">За нас</a></li>
+                <li><a href="{% url 'services' %}">Услуги</a></li>
+                <li><a href="{% url 'contact' %}">Контакти</a></li>
+                <li><a href="{% url 'register' %}">Регистрация</a></li>
+                <li><a href="{% url 'login' %}">Влез</a></li>
+                <li><a href="{% url 'logout' %}">Излез</a></li>
+            </div>
+        </nav>
+    </header>
+    <!-- Krai header-->
+    {% block content %}
+    {% endblock %}
+    <!-- Nachalo footer -->
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul class="menu">
+                    <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                    <li><a href="{% url 'forus' %}">За нас</a></li>
+                    <li><a href="{% url 'services' %}">Услуги</a></li>
+                    <li><a href="{% url 'contact' %}">Контакти</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                    <li><a href="{% url 'login' %}">Влез</a></li>
+                    <li><a href="{% url 'logout' %}">Излез</a></li>
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p>©Nikolay Nikov. Всички права са запазени.</p>
+            </div>
         </div>
-        <script src="{% static 'javascript/app.js' %}"></script>
-        <!--Безплатен JS library за изпращане на имейл-->
+    </footer>
+    <!-- Krai footer -->
+</div>
+<script src="{% static 'javascript/app.js' %}"></script>
+<!--Безплатен JS library за изпращане на имейл-->
 {#        <script src="https://smtpjs.com/v3/smtp.js"></script>#}
-        <!--Безплатен JS library за alert при натискане на бутона 'Изпрати'-->
+<!--Безплатен JS library за alert при натискане на бутона 'Изпрати'-->
 {#        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>#}
-        <script src="{% static 'javascript/contact.js' %}"></script>
-     </body>
+<script src="{% static 'javascript/contact.js' %}"></script>
+</body>
 </html>
