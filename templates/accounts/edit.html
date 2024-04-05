@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <form action="{% url 'edit' pk=request.user.pk %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Редактирай</button>
+    </form>
+{% endblock %}

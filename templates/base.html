@@ -29,29 +29,41 @@
             </div>
             <div class="rightnav">
                 <ul class="menu">
+                {% if request.user.is_authenticated %}
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                    <li><a href="{% url 'profile' pk=request.user.pk %} ">Профил</a></li>
                     <li><a href="{% url 'forus' %}">За нас</a></li>
                     <li><a href="{% url 'services' %}">Услуги</a></li>
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
-                    <li><a href="{% url 'register' %}">Регистрация</a></li>
-                    <li><a href="{% url 'login' %}">Влез</a></li>
                     <li><form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <button>Излез</button>
                     </form></li>
+                {% else %}
+                    <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                    <li><a href="{% url 'login' %}">Влез</a></li>
+                {% endif %}
                 </ul>
             </div>
             <div class="hamburger">
                 <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
             </div>
             <div class="dropdown">
-                <li class="active"><a href="{% url 'index' %}">Начало</a></li>
-                <li><a href="{% url 'forus' %}">За нас</a></li>
-                <li><a href="{% url 'services' %}">Услуги</a></li>
-                <li><a href="{% url 'contact' %}">Контакти</a></li>
-                <li><a href="{% url 'register' %}">Регистрация</a></li>
-                <li><a href="{% url 'login' %}">Влез</a></li>
-                <li><a href="{% url 'logout' %}">Излез</a></li>
+             {% if request.user.is_authenticated %}
+                    <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                    <li><a href="{% url 'forus' %}">За нас</a></li>
+                    <li><a href="{% url 'services' %}">Услуги</a></li>
+                    <li><a href="{% url 'contact' %}">Контакти</a></li>
+                    <li><form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button>Излез</button>
+                    </form></li>
+                {% else %}
+                    <li class="active"><a href="{% url 'index' %}">Начало</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                    <li><a href="{% url 'login' %}">Влез</a></li>
+                {% endif %}
             </div>
         </nav>
     </header>
@@ -70,13 +82,20 @@
             </div>
             <div class="footerNav">
                 <ul class="menu">
+              {% if request.user.is_authenticated %}
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
                     <li><a href="{% url 'forus' %}">За нас</a></li>
                     <li><a href="{% url 'services' %}">Услуги</a></li>
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
+                    <li><form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button>Излез</button>
+                    </form></li>
+                {% else %}
+                    <li class="active"><a href="{% url 'index' %}">Начало</a></li>
                     <li><a href="{% url 'register' %}">Регистрация</a></li>
                     <li><a href="{% url 'login' %}">Влез</a></li>
-                    <li><a href="{% url 'logout' %}">Излез</a></li>
+                {% endif %}
                 </ul>
             </div>
             <div class="footerBottom">
