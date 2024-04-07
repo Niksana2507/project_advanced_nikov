@@ -1,0 +1,36 @@
+.profileCont {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.profileCont h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.profileCont p {
+    margin-bottom: 10px;
+}
+
+.profileCont a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #33D2FF;
+    padding: 30px;
+    font-size: 20px;
+}
+
+
+

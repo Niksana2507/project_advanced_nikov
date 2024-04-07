@@ -12,19 +12,19 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
     username_validator = UnicodeUsernameValidator()
 
     username = models.CharField(
-        _("username"),
+        _("потребител"),
         max_length=150,
         unique=True,
         help_text=_(
-            "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+            "Използвайте букви, цифри и @/./+/-/_ . Не повече от 150 символа!"
         ),
         validators=[username_validator],
         error_messages={
-            "unique": _("A user with that username already exists."),
+            "unique": _("Потребител с това име вече съществува!"),
         },
     )
 
-    email = models.EmailField(_("email address"), blank=False, null=False, unique=True)
+    email = models.EmailField(_("email"), blank=False, null=False, unique=True)
 
     is_staff = models.BooleanField(default=False, )
 

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
-from project_advanced_nikov.accounts.forms import AppUserForm, ProfileForm
+from project_advanced_nikov.accounts.forms import AppUserForm, ProfileForm, RegisterForm
 from project_advanced_nikov.accounts.models import AppUser, Profile
 
 
@@ -11,7 +11,7 @@ from project_advanced_nikov.accounts.models import AppUser, Profile
 class AppUserRegister(CreateView):
     model = AppUser
     template_name = "accounts/register.html"
-    form_class = AppUserForm
+    form_class = RegisterForm
     success_url = reverse_lazy("login")
 
 

@@ -118,7 +118,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(images/zanas.jpg);
+    background-image: url(../images/zanas.jpg);
 }
 
 .container {

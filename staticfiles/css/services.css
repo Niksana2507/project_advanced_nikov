@@ -5,7 +5,7 @@ body {
 }
 
 main {
-    background-image: url(images/uslugi.jpg);
+    background-image: url(../images/uslugi.jpg);
     display: flex;
     justify-content: center;
     align-items: center;

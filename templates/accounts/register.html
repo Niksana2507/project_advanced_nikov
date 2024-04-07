@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'register' %}" method="post">
+    <div class="registerCont">
+        <h2 class="registerTitle">Регистрация</h2>
+        <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         {{ form }}
         <button>Регистрация</button>
     </form>
+    </div>
 {% endblock %}

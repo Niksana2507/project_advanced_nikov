@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    {{ profile.user }}
-    <a href="{% url 'edit' pk=request.user.pk %}">Редактирай</a>
-    <img src="{{ profile.profile_picture  }}" alt="#">
-    <a href="{% url 'delete' pk=request.user.pk %}">Изтрий</a>
+    <div class="profileCont">
+        <h1>Профил</h1>
+        <div class="card">
+            <div class="imgBx">
+                <img src="{{ profile.profile_picture }}" alt="#">
+            </div>
+            <div class="contentBx">
+                <p>Потребителско име: {{ profile.user.username }}</p>
+                <p>Имейл: {{ profile.user.email }}</p>
+                <p>Име: {{ profile.first_name }}</p>
+                <p>Фамилия: {{ profile.last_name }}</p>
+                <p>Възраст: {{ profile.age }}</p>
+            </div>
+        </div>
+        <a href="{% url 'edit' pk=request.user.pk %}">Редактирай</a>
+        <a href="{% url 'delete' pk=request.user.pk %}">Изтрий</a>
+    </div>
 {% endblock %}
+
+
