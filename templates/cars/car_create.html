@@ -1,0 +1,11 @@
+{% extends  'base.html' %}
+{% load static %}
+{% block content %}
+	<h1>Избери кола</h1>
+    <form action="{% url 'car_create' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Заяви</button>
+    </form>
+    <a href="{% url 'car_list' %}">Вашите коли</a>
+{% endblock %}

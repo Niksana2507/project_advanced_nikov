@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'project_advanced_nikov.accounts'
+    'project_advanced_nikov.accounts',
+    'project_advanced_nikov.web',
+    'project_advanced_nikov.cars',
 ]
 
 MIDDLEWARE = [

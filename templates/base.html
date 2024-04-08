@@ -39,6 +39,7 @@
                     <li><a href="{% url 'forus' %}">За нас</a></li>
                     <li><a href="{% url 'services' %}">Услуги</a></li>
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
+                    <li><a href="{% url 'car_create' %}">Коли</a></li>
                     <li><form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <button>Излез</button>
@@ -47,6 +48,7 @@
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
                     <li><a href="{% url 'register' %}">Регистрация</a></li>
                     <li><a href="{% url 'login' %}">Влез</a></li>
+                    <li><a href="{% url 'contact' %}">Контакти</a></li>
                 {% endif %}
                 </ul>
             </div>
