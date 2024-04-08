@@ -11,7 +11,14 @@ class CarCreateView(CreateView):
     model = Car
     template_name = 'cars/car_create.html'
     form_class = CarForm
-    success_url = reverse_lazy('car_list')
+
+    def get_success_url(self):
+        return reverse_lazy("car_list", kwargs={"pk":self.request.user.pk})
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
 
 class CarDetailView(DetailView):
     model = Car
@@ -22,13 +29,18 @@ class CarUpdateView(UpdateView):
     model = Car
     template_name = 'cars/car_update.html'
     form_class = CarForm
-    success_url = reverse_lazy('car_list')
+
+    def get_success_url(self):
+        return reverse_lazy("car_detail", kwargs={"pk":self.object.pk})
+
 
 class CarDeleteView(DeleteView):
     model = Car
     template_name = 'cars/car_delete.html'
-    success_url = reverse_lazy('car_list')
 
-def car_list(request):
-    cars = Car.objects.all()
+    def get_success_url(self):
+        return reverse_lazy("car_list", kwargs={"pk":self.object.pk})
+
+def car_list(request, pk):
+    cars = Car.objects.filter(user_id=pk)
     return render(request, 'cars/car_list.html', {'cars': cars})

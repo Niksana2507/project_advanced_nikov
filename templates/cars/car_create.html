@@ -7,5 +7,5 @@
         {{ form }}
         <button>Заяви</button>
     </form>
-    <a href="{% url 'car_list' %}">Вашите коли</a>
+    <a href="{% url 'car_list' pk=request.user.pk %}">Вашите коли</a>
 {% endblock %}

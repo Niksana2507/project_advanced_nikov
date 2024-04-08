@@ -4,9 +4,11 @@
 	<h1>Car List</h1>
     <ul>
         {% for car in cars %}
-            <li>
-                <a href="{% url 'car_detail' car.pk %}">{{ car.model }} ({{ car.year }})</a>
-            </li>
+            {% if car.user == request.user  %}
+                <li>
+                    <a href="{% url 'car_detail' pk=car.id %}">{{ car.model }} ({{ car.year }})</a>
+                </li>
+            {% endif %}
         {% empty %}
             <li>Няма добавени коли.</li>
         {% endfor %}

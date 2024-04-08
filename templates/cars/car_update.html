@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 	<h1>Редактирай</h1>
-    <form action="{% url 'car_update' pk=request.cars.pk%}" method="post">
+    <form action="{% url 'car_update' pk=object.pk%}" method="post">
         {% csrf_token %}
         {{ form }}
         <button>Извърши редакция</button>

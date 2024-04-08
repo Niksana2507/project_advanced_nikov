@@ -1,6 +1,9 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
 
+from project_advanced_nikov.accounts.models import AppUser
+
+
 # Create your models here.
 class Car(models.Model):
     class CarModel(models.TextChoices):
@@ -52,4 +55,9 @@ class Car(models.Model):
         max_length=MAX_DESCRIPTION_LENGTH,
         null=True,
         blank=True,
+    )
+
+    user = models.ForeignKey(
+        AppUser,
+        on_delete= models.CASCADE
     )

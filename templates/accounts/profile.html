@@ -13,6 +13,11 @@
                 <p>Име: {{ profile.first_name }}</p>
                 <p>Фамилия: {{ profile.last_name }}</p>
                 <p>Възраст: {{ profile.age }}</p>
+                <p>Коли: </p>
+                {% for car in profile.user.car_set.all %}
+                	<p>{{ car.model }}</p>
+                {% endfor %}
+
             </div>
         </div>
         <a href="{% url 'edit' pk=request.user.pk %}">Редактирай</a>
