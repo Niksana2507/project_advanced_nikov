@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from project_advanced_nikov.accounts.forms import AppUserForm, ProfileForm, RegisterForm
+from project_advanced_nikov.accounts.mixins import CustomLoginRequiredMixin
 from project_advanced_nikov.accounts.models import AppUser, Profile
 
 
@@ -23,25 +24,22 @@ class LoginAppUserView(LoginView):
 class LogoutAppUserView(LogoutView):
     pass
 
-class ProfileDetailsView(DetailView):
+class ProfileDetailsView(CustomLoginRequiredMixin, DetailView):
     template_name = "accounts/profile.html"
     model = Profile
 
-class ProfileEditView(UpdateView):
+class ProfileEditView(CustomLoginRequiredMixin, UpdateView):
     template_name = "accounts/edit.html"
     model = Profile
     form_class = ProfileForm
     def get_success_url(self):
         return reverse_lazy("profile", kwargs={"pk":self.object.pk})
 
-class ProfileDeleteView(DeleteView):
+class ProfileDeleteView(CustomLoginRequiredMixin, DeleteView):
     template_name = "accounts/delete.html"
     model = Profile
     success_url = reverse_lazy("index")
 
-    def get_object(self, queryset=None):
-        return self.request.user
-    def delete(self, request, *args, **kwargs):
-        user = self.get_object()
-        user.delete()
-        return redirect(self.get_success_url())
+    def form_valid(self, form):
+        self.request.user.delete()
+        return super().form_valid(form)

@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import BaseUserCreationForm
+from django.contrib.auth.forms import BaseUserCreationForm, UserChangeForm
 
 from project_advanced_nikov.accounts.models import AppUser, Profile
 
@@ -35,3 +35,7 @@ class RegisterForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class AppUserChangeForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        model = AppUser
