@@ -95,7 +95,7 @@
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
                     <li><form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
-                        <button class="navButton">Излез</button>
+                        <button>Излез</button>
                     </form></li>
                 {% else %}
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
