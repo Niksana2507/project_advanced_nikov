@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'delete' pk=request.user.pk %}" method="post">
-        {% csrf_token %}
-        U want to delete?
-        <button>Изтрий</button>
-    </form>
+    <div class="registerCont">
+        <form action="{% url 'delete' pk=request.user.pk %}" method="post">
+            {% csrf_token %}
+            <p class="deleteCont">Искате да изтриете акаунта?</p>
+            <button>Изтрий</button>
+        </form>
+    </div>
 {% endblock %}

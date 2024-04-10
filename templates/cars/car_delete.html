@@ -1,9 +1,11 @@
 {% extends  'base.html' %}
 {% load static %}
 {% block content %}
-    <form action="{% url 'car_delete' pk=object.pk %}" method="post">
-        {% csrf_token %}
-        Искате да изтриете колата?
-        <button>Изтрий</button>
-    </form>
+    <div class="registerCont">
+         <form action="{% url 'car_delete' pk=object.pk %}" method="post">
+             {% csrf_token %}
+             <p class="deleteCont">Искате да изтриете колата?</p>
+             <button>Изтрий</button>
+        </form>
+    </div>
 {% endblock %}

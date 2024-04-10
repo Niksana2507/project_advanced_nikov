@@ -1,15 +1,16 @@
 {% extends  'base.html' %}
 {% load static %}
 {% block content %}
-    <h1>Вашите коли</h1>
-    <p>Модел: {{ car.model }}</p>
-    <p>Двигател: {{ car.engine_type }}</p>
-    <p>Година: {{ car.year }}</p>
-    <p>VIN:{{ car.vin }}</p>
-    <p>Описание: {{ car.description }}</p>
+    <div class="registerCont">
+        <h1 class="registerTitle">Кола</h1>
+        <p>Модел: {{ car.model }}</p>
+        <p>Двигател: {{ car.engine_type }}</p>
+        <p>Година: {{ car.year }}</p>
+        <p>VIN:{{ car.vin }}</p>
+        <p>Описание: {{ car.description }}</p>
 
-    <a href="{% url 'car_list' pk=request.user.pk %}">Към коли</a>
-    <a href="{% url 'car_update' pk=object.pk %}">Редактирай</a>
-    <a href="{% url 'car_delete' pk=object.pk %}">Изтрий</a>
-
+        <a href="{% url 'car_list' pk=request.user.pk %}">Към коли</a>
+        <a href="{% url 'car_update' pk=object.pk %}">Редактирай</a>
+        <a href="{% url 'car_delete' pk=object.pk %}">Изтрий</a>
+    </div>
 {% endblock %}

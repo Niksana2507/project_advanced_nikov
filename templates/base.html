@@ -95,7 +95,7 @@
                     <li><a href="{% url 'contact' %}">Контакти</a></li>
                     <li><form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
-                        <button>Излез</button>
+                        <button class="navButton">Излез</button>
                     </form></li>
                 {% else %}
                     <li class="active"><a href="{% url 'index' %}">Начало</a></li>
@@ -113,9 +113,9 @@
 </div>
 <script src="{% static 'javascript/app.js' %}"></script>
 <!--Безплатен JS library за изпращане на имейл-->
-{#        <script src="https://smtpjs.com/v3/smtp.js"></script>#}
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
 <!--Безплатен JS library за alert при натискане на бутона 'Изпрати'-->
-{#        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>#}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{% static 'javascript/contact.js' %}"></script>
 </body>
 </html>
